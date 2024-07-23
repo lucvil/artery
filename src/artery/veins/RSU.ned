@@ -30,7 +30,7 @@ module RSU
             @display("p=60,150");
             mac1609_4.useAcks = default(true);
             mac1609_4.useServiceChannel = default(false);
-            phy80211p.minPowerLevel = default(-110dBm);
+            phy80211p.minPowerLevel = default(-110dBm); // power level th
             phy80211p.noiseFloor = default(-98dBm);
             phy80211p.useNoiseFloor = default(true);
             phy80211p.usePropagationDelay = default(true);

@@ -117,6 +117,9 @@ void CaService::indicate(const vanetza::btp::DataIndication& ind, std::unique_pt
 	}
 }
 
+
+// message create
+//different function by node num
 void CaService::checkTriggeringConditions(const SimTime& T_now)
 {
 	// provide variables named like in EN 302 637-2 V1.3.2 (section 6.1.3)
@@ -129,6 +132,7 @@ void CaService::checkTriggeringConditions(const SimTime& T_now)
 	if (T_elapsed >= T_GenCamDcc) {
 		if (mFixedRate) {
 			sendCam(T_now);
+		// change to control time for crating message 2024/4/25
 		} else if (checkHeadingDelta() || checkPositionDelta() || checkSpeedDelta()) {
 			sendCam(T_now);
 			T_GenCam = std::min(T_elapsed, T_GenCamMax); /*< if middleware update interval is too long */
